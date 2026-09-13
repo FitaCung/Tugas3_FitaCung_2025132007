@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Warung Sederhana — pemesanan makanan, minuman, dan cemilan.">
+    <title>Warung Sederhana | Pesan Makanan</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+    <nav class="main-nav">
+        <a class="brand" href="#beranda">
+            <span class="brand-mark">WS</span>
+            <span class="brand-copy">
+                <strong>Warung Sederhana</strong>
+                <small>Masakan rumahan, rasa istimewa</small>
+            </span>
+        </a>
+        <div class="nav-links">
+            <a href="#beranda">Beranda</a>
+            <a href="#tentang">Tentang</a>
+            <a href="#daftar-menu">Menu</a>
+            <a class="nav-order" href="#form-pemesanan">Pesan Sekarang</a>
+        </div>
+    </nav>
+</header>
+
+<main>
+    <section id="beranda" class="hero-section">
+        <span class="hero-grain hero-grain-left" aria-hidden="true"></span>
+        <span class="hero-grain hero-grain-right" aria-hidden="true"></span>
+        <div class="hero-inner">
+            <div class="hero-copy">
+                <p class="eyebrow">WARUNG SEDERHANA · PESAN MAKANAN</p>
+                <h1 id="judul-utama">Rasa rumahan,<br><em>dekat di hati.</em></h1>
+                <p class="hero-text">
+                    Pesan makanan favorit Anda dengan mudah. Pilih menu, tentukan jumlah,
+                    lalu kirim pesanan tanpa perlu repot.
+                </p>
+                <div class="hero-actions">
+                    <a class="button button-primary" href="#daftar-menu">Lihat Menu <span>↓</span></a>
+                    <a class="button button-ghost" href="#form-pemesanan">Pesan Sekarang <span>→</span></a>
+                </div>
+                <div class="hero-stats">
+                    <div><strong>15+</strong><span>Pilihan Menu</span></div>
+                    <div><strong>Segar</strong><span>Setiap Hari</span></div>
+                    <div><strong>Ramah</strong><span>Di Kantong</span></div>
+                </div>
+            </div>
+            <div class="hero-panel">
+                <div class="hero-food-art">
+                    <img class="hero-food-image" src="https://dt-webcons-web-xlrvm-prod-1394847165.cos.ap-jakarta.myqcloud.com/images/post/859ceb26-3e3e-4689-915f-fc0b855b2e3c.jpg" alt="Hidangan nasi dengan lauk khas Indonesia">
+                    <span class="food-label">Dibuat sederhana,<br>disajikan sepenuh hati.</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="tentang" class="about-section content-wrap">
+        <div class="about-left">
+            <div class="about-visual" aria-hidden="true">
+                <div class="about-visual-image"></div>
+                <span class="about-visual-badge">Rasa rumahan</span>
+            </div>
+            <div class="section-intro">
+                <p class="eyebrow">TENTANG KAMI</p>
+                <h2>Lebih dari sekadar<br>tempat makan.</h2>
+            </div>
+        </div>
+
+        <div class="about-content">
+            <p class="lead">
+                Warung Sederhana hadir untuk menyajikan makanan yang akrab, lezat,
+                dan mudah dinikmati setiap hari.
+            </p>
+            <p>
+                Kami mengutamakan bahan yang segar, rasa yang autentik, serta harga
+                yang bersahabat. Baik untuk makan sendiri, bersama keluarga, maupun
+                sekadar mencari cemilan, semuanya bisa dipesan dengan praktis melalui
+                halaman ini.
+            </p>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <span>01</span>
+                    <strong>Bahan Segar</strong>
+                    <p>Dipilih untuk menjaga rasa dan kualitas.</p>
+                </div>
+                <div class="feature-item">
+                    <span>02</span>
+                    <strong>Harga Bersahabat</strong>
+                    <p>Menu sederhana dengan harga terjangkau.</p>
+                </div>
+                <div class="feature-item">
+                    <span>03</span>
+                    <strong>Rasa Autentik</strong>
+                    <p>Nuansa masakan rumahan yang familiar.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="daftar-menu" class="menu-section content-wrap">
+        <div class="section-heading">
+            <div>
+                <p class="eyebrow">DAFTAR MENU</p>
+                <h2>Pilih yang ingin<br>Anda nikmati.</h2>
+            </div>
+            <div class="section-callout menu-callout">
+                <span class="callout-icon" aria-hidden="true">♨</span>
+                <p class="section-description">Jelajahi menu kami sebelum melakukan pemesanan.</p>
+            </div>
+        </div>
+
+        <div class="menu-grid">
+            <article class="menu-card" id="utama">
+                <div class="card-heading">
+                    <span class="card-number">01</span>
+                    <div><h3>Menu Utama</h3></div>
+                </div>
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Menu</th><th>Nama</th><th>Harga</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><img class="menu-image" src="assets/Pecel Lele.jpg" alt="Pecel Lele"></td>
+                            <td>
+                                <strong>Pecel Lele</strong>
+                                <span class="menu-note">Lele gurih dengan sambal dan lalapan.</span>
+                            </td>
+                            <td><span class="price">Rp 15.000</span></td>
+                        </tr>
+                        <tr>
+                            <td><img class="menu-image" src="assets/Gado-gado.jpeg" alt="Gado-Gado"></td>
+                            <td>
+                                <strong>Gado-Gado</strong>
+                                <span class="menu-note">Sayuran segar dengan saus kacang gurih.</span>
+                            </td>
+                            <td><span class="price">Rp 16.000</span></td>
+                        </tr>
+                        <tr>
+                            <td><img class="menu-image" src="assets/Batagor.jpeg" alt="Batagor"></td>
+                            <td>
+                                <strong>Batagor</strong>
+                                <span class="menu-note">Batagor renyah dengan siraman saus kacang.</span>
+                            </td>
+                            <td><span class="price">Rp 14.000</span></td>
+                        </tr>
+                        <tr>
+                            <td><img class="menu-image" src="assets/Mie Goreng.jpeg" alt="Mie Goreng"></td>
+                            <td>
+                                <strong>Mie Goreng</strong>
+                                <span class="menu-note">Mie berbumbu gurih dengan cita rasa rumahan.</span>
+                            </td>
+                            <td><span class="price">Rp 15.000</span></td>
+                        </tr>
+                        <tr>
+                            <td><img class="menu-image" src="assets/Nasi Goreng.webp" alt="Nasi Goreng"></td>
+                            <td>
+                                <strong>Nasi Goreng</strong>
+                                <span class="menu-note">Nasi berbumbu khas dengan aroma yang menggugah selera.</span>
+                            </td>
+                            <td><span class="price">Rp 15.000</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </article>
+
+            <article class="menu-card" id="minuman">
+                <div class="card-heading">
+                    <span class="card-number">02</span>
+                    <div><h3>Minuman</h3></div>
+                </div>
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Menu</th><th>Nama</th><th>Harga</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><img class="menu-image" src="assets/Es Teh Manis.jpeg" alt="Es Teh Manis"></td>
+                            <td>
+                                <strong>Es Teh Manis</strong>
+                                <span class="menu-note">Teh manis dingin yang ringan dan menyegarkan.</span>
+                            </td>
+                            <td><span class="price">Rp 5.000</span></td>
+                        </tr>
+                        <tr>
+                            <td><img class="menu-image" src="assets/Teh Hangat.jpeg" alt="Teh Hangat"></td>
+                            <td>
+                                <strong>Teh Hangat</strong>
+                                <span class="menu-note">Teh hangat sederhana untuk menemani santapan.</span>
+                            </td>
+                            <td><span class="price">Rp 4.000</span></td>
+                        </tr>
+                        <tr>
+                            <td><img class="menu-image" src="assets/Es Jeruk Peras.jpg" alt="Es Jeruk Peras"></td>
+                            <td>
+                                <strong>Es Jeruk Peras</strong>
+                                <span class="menu-note">Perasan jeruk segar dengan rasa manis dan asam.</span>
+                            </td>
+                            <td><span class="price">Rp 7.000</span></td>
+                        </tr>
+                        <tr>
+                            <td><img class="menu-image" src="assets/Es Cendol.jpg" alt="Es Cendol"></td>
+                            <td>
+                                <strong>Es Cendol</strong>
+                                <span class="menu-note">Cendol lembut dengan kuah manis yang creamy.</span>
+                            </td>
+                            <td><span class="price">Rp 8.000</span></td>
+                        </tr>
+                        <tr>
+                            <td><img class="menu-image" src="assets/Es Campur.jpeg" alt="Es Campur"></td>
+                            <td>
+                                <strong>Es Campur</strong>
+                                <span class="menu-note">Campuran isian segar dengan rasa manis menyegarkan.</span>
+                            </td>
+                            <td><span class="price">Rp 10.000</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </article>
+
+            <article class="menu-card" id="cemilan">
+                <div class="card-heading">
+                    <span class="card-number">03</span>
+                    <div><h3>Cemilan</h3></div>
+                </div>
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Menu</th><th>Nama</th><th>Harga</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><img class="menu-image" src="assets/Bakwan.jpeg" alt="Bakwan"></td>
+                            <td>
+                                <strong>Bakwan</strong>
+                                <span class="menu-note">Gorengan renyah dengan sayuran gurih di dalamnya.</span>
+                            </td>
+                            <td><span class="price">Rp 5.000</span></td>
+                        </tr>
+                        <tr>
+                            <td><img class="menu-image" src="assets/Tempe Mendoan.jpeg" alt="Tempe Mendoan"></td>
+                            <td>
+                                <strong>Tempe Mendoan</strong>
+                                <span class="menu-note">Tempe lembut berbalut tepung gurih dan renyah.</span>
+                            </td>
+                            <td><span class="price">Rp 6.000</span></td>
+                        </tr>
+                        <tr>
+                            <td><img class="menu-image" src="assets/Tahu Isi.jpeg" alt="Tahu Isi"></td>
+                            <td>
+                                <strong>Tahu Isi</strong>
+                                <span class="menu-note">Tahu gurih berisi sayuran dengan balutan renyah.</span>
+                            </td>
+                            <td><span class="price">Rp 5.000</span></td>
+                        </tr>
+                        <tr>
+                            <td><img class="menu-image" src="assets/Pisang Goreng.jpg" alt="Pisang Goreng"></td>
+                            <td>
+                                <strong>Pisang Goreng</strong>
+                                <span class="menu-note">Pisang manis berbalut adonan goreng yang renyah.</span>
+                            </td>
+                            <td><span class="price">Rp 6.000</span></td>
+                        </tr>
+                        <tr>
+                            <td><img class="menu-image" src="assets/Cireng Bumbu Rujak.jpeg" alt="Cireng Bumbu Rujak"></td>
+                            <td>
+                                <strong>Cireng Bumbu Rujak</strong>
+                                <span class="menu-note">Cireng kenyal dengan bumbu rujak manis pedas.</span>
+                            </td>
+                            <td><span class="price">Rp 7.000</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </article>
+        </div>
+    </section>
+
+    <section id="form-pemesanan" class="order-section">
+        <div class="content-wrap">
+            <div class="order-heading">
+                <div>
+                    <p class="eyebrow">PEMESANAN</p>
+                    <h2>Pesan makanan<br>Anda di sini.</h2>
+                </div>
+                <div class="section-callout order-callout">
+                    <span class="callout-icon" aria-hidden="true">✎</span>
+                    <p>
+                        Isi data pelanggan dan pilih menu yang diinginkan. Pastikan jumlah pesanan sudah sesuai.<br>
+                        <strong>Waktu sekarang: <span id="waktuSekarang">--:--:--</span></strong>
+                    </p>
+                </div>
+            </div>
+
+            <form class="order-form" id="formPesanan">
+                <div class="form-top">
+                    <div class="step-badge">01</div>
+                    <div>
+                        <p class="section-kicker">DATA PELANGGAN</p>
+                        <h3>Siapa yang memesan?</h3>
+                    </div>
+                </div>
+
+                <div class="customer-grid">
+                    <div class="form-group">
+                        <label for="nama">Nama Pelanggan</label>
+                        <input id="nama" name="nama" type="text" placeholder="Masukkan nama Anda" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="telepon">Nomor Telepon</label>
+                        <input id="telepon" name="telepon" type="tel" placeholder="08xxxxxxxxxx" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="metode">Metode Pesanan</label>
+                        <select id="metode" name="metode" required>
+                            <option value="">Pilih metode</option>
+                            <option value="dine-in">Makan di tempat</option>
+                            <option value="takeaway">Dibungkus / Take Away</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="meja">Nomor Meja <span>(jika makan di tempat)</span></label>
+                        <input id="meja" name="meja" type="text" placeholder="Contoh: 05">
+                    </div>
+                    <div class="form-group">
+                        <label for="kategoriPelanggan">Kategori Pelanggan</label>
+                        <select id="kategoriPelanggan" name="kategoriPelanggan" required>
+                            <option value="umum" selected>Umum</option>
+                            <option value="member">Member</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-divider"></div>
+
+                <div class="form-top">
+                    <div class="step-badge">02</div>
+                    <div>
+                        <p class="section-kicker">PILIH MENU</p>
+                        <h3>Apa yang ingin dipesan?</h3>
+                    </div>
+                </div>
+
+                <div class="order-menu-grid">
+                    <div class="order-category">
+                        <div class="order-category-title"><h3>Menu Utama</h3></div>
+                        <table class="order-table">
+                            <thead>
+                                <tr><th>Menu</th><th>Harga</th><th>Jumlah</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="order-item">
+                                        <div class="order-item-name">
+                                            <input type="checkbox" name="menu[]" value="Pecel Lele">
+                                            <span>Pecel Lele</span>
+                                        </div>
+                                    </td>
+                                    <td><span class="price">Rp 15.000</span></td>
+                                    <td><input class="qty-input" type="number" name="qty_Pecel_Lele" min="1" value="1" aria-label="Jumlah Pecel Lele"></td>
+                                </tr>
+                                <tr>
+                                    <td class="order-item">
+                                        <div class="order-item-name">
+                                            <input type="checkbox" name="menu[]" value="Gado-Gado">
+                                            <span>Gado-Gado</span>
+                                        </div>
+                                    </td>
+                                    <td><span class="price">Rp 16.000</span></td>
+                                    <td><input class="qty-input" type="number" name="qty_Gado-Gado" min="1" value="1" aria-label="Jumlah Gado-Gado"></td>
+                                </tr>
+                                <tr>
+                                    <td class="order-item">
+                                        <div class="order-item-name">
+                                            <input type="checkbox" name="menu[]" value="Batagor">
+                                            <span>Batagor</span>
+                                        </div>
+                                    </td>
+                                    <td><span class="price">Rp 14.000</span></td>
+                                    <td><input class="qty-input" type="number" name="qty_Batagor" min="1" value="1" aria-label="Jumlah Batagor"></td>
+                                </tr>
+                                <tr>
+                                    <td class="order-item">
+                                        <div class="order-item-name">
+                                            <input type="checkbox" name="menu[]" value="Mie Goreng">
+                                            <span>Mie Goreng</span>
+                                        </div>
+                                    </td>
+                                    <td><span class="price">Rp 15.000</span></td>
+                                    <td><input class="qty-input" type="number" name="qty_Mie_Goreng" min="1" value="1" aria-label="Jumlah Mie Goreng"></td>
+                                </tr>
+                                <tr>
+                                    <td class="order-item">
+                                        <div class="order-item-name">
+                                            <input type="checkbox" name="menu[]" value="Nasi Goreng">
+                                            <span>Nasi Goreng</span>
+                                        </div>
+                                    </td>
+                                    <td><span class="price">Rp 15.000</span></td>
+                                    <td><input class="qty-input" type="number" name="qty_Nasi_Goreng" min="1" value="1" aria-label="Jumlah Nasi Goreng"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="order-category">
+                        <div class="order-category-title"><h3>Minuman</h3></div>
+                        <table class="order-table">
+                            <thead>
+                                <tr><th>Menu</th><th>Harga</th><th>Jumlah</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="order-item">
+                                        <div class="order-item-name">
+                                            <input type="checkbox" name="menu[]" value="Es Teh Manis">
+                                            <span>Es Teh Manis</span>
+                                        </div>
+                                    </td>
+                                    <td><span class="price">Rp 5.000</span></td>
+                                    <td><input class="qty-input" type="number" name="qty_Es_Teh_Manis" min="1" value="1" aria-label="Jumlah Es Teh Manis"></td>
+                                </tr>
+                                <tr>
+                                    <td class="order-item">
+                                        <div class="order-item-name">
+                                            <input type="checkbox" name="menu[]" value="Teh Hangat">
+                                            <span>Teh Hangat</span>
+                                        </div>
+                                    </td>
+                                    <td><span class="price">Rp 4.000</span></td>
+                                    <td><input class="qty-input" type="number" name="qty_Teh_Hangat" min="1" value="1" aria-label="Jumlah Teh Hangat"></td>
+                                </tr>
+                                <tr>
+                                    <td class="order-item">
+                                        <div class="order-item-name">
+                                            <input type="checkbox" name="menu[]" value="Es Jeruk Peras">
+                                            <span>Es Jeruk Peras</span>
+                                        </div>
+                                    </td>
+                                    <td><span class="price">Rp 7.000</span></td>
+                                    <td><input class="qty-input" type="number" name="qty_Es_Jeruk_Peras" min="1" value="1" aria-label="Jumlah Es Jeruk Peras"></td>
+                                </tr>
+                                <tr>
+                                    <td class="order-item">
+                                        <div class="order-item-name">
+                                            <input type="checkbox" name="menu[]" value="Es Cendol">
+                                            <span>Es Cendol</span>
+                                        </div>
+                                    </td>
+                                    <td><span class="price">Rp 8.000</span></td>
+                                    <td><input class="qty-input" type="number" name="qty_Es_Cendol" min="1" value="1" aria-label="Jumlah Es Cendol"></td>
+                                </tr>
+                                <tr>
+                                    <td class="order-item">
+                                        <div class="order-item-name">
+                                            <input type="checkbox" name="menu[]" value="Es Campur">
+                                            <span>Es Campur</span>
+                                        </div>
+                                    </td>
+                                    <td><span class="price">Rp 10.000</span></td>
+                                    <td><input class="qty-input" type="number" name="qty_Es_Campur" min="1" value="1" aria-label="Jumlah Es Campur"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="order-category">
+                        <div class="order-category-title"><h3>Cemilan</h3></div>
+                        <table class="order-table">
+                            <thead>
+                                <tr><th>Menu</th><th>Harga</th><th>Jumlah</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="order-item">
+                                        <div class="order-item-name">
+                                            <input type="checkbox" name="menu[]" value="Bakwan">
+                                            <span>Bakwan</span>
+                                        </div>
+                                    </td>
+                                    <td><span class="price">Rp 5.000</span></td>
+                                    <td><input class="qty-input" type="number" name="qty_Bakwan" min="1" value="1" aria-label="Jumlah Bakwan"></td>
+                                </tr>
+                                <tr>
+                                    <td class="order-item">
+                                        <div class="order-item-name">
+                                            <input type="checkbox" name="menu[]" value="Tempe Mendoan">
+                                            <span>Tempe Mendoan</span>
+                                        </div>
+                                    </td>
+                                    <td><span class="price">Rp 6.000</span></td>
+                                    <td><input class="qty-input" type="number" name="qty_Tempe_Mendoan" min="1" value="1" aria-label="Jumlah Tempe Mendoan"></td>
+                                </tr>
+                                <tr>
+                                    <td class="order-item">
+                                        <div class="order-item-name">
+                                            <input type="checkbox" name="menu[]" value="Tahu Isi">
+                                            <span>Tahu Isi</span>
+                                        </div>
+                                    </td>
+                                    <td><span class="price">Rp 5.000</span></td>
+                                    <td><input class="qty-input" type="number" name="qty_Tahu_Isi" min="1" value="1" aria-label="Jumlah Tahu Isi"></td>
+                                </tr>
+                                <tr>
+                                    <td class="order-item">
+                                        <div class="order-item-name">
+                                            <input type="checkbox" name="menu[]" value="Pisang Goreng">
+                                            <span>Pisang Goreng</span>
+                                        </div>
+                                    </td>
+                                    <td><span class="price">Rp 6.000</span></td>
+                                    <td><input class="qty-input" type="number" name="qty_Pisang_Goreng" min="1" value="1" aria-label="Jumlah Pisang Goreng"></td>
+                                </tr>
+                                <tr>
+                                    <td class="order-item">
+                                        <div class="order-item-name">
+                                            <input type="checkbox" name="menu[]" value="Cireng Bumbu Rujak">
+                                            <span>Cireng Bumbu Rujak</span>
+                                        </div>
+                                    </td>
+                                    <td><span class="price">Rp 7.000</span></td>
+                                    <td><input class="qty-input" type="number" name="qty_Cireng_Bumbu_Rujak" min="1" value="1" aria-label="Jumlah Cireng Bumbu Rujak"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="form-divider"></div>
+
+                <div class="form-top">
+                    <div class="step-badge">03</div>
+                    <div>
+                        <p class="section-kicker">CATATAN</p>
+                        <h3>Ada permintaan khusus?</h3>
+                    </div>
+                </div>
+
+                <div class="form-group notes-group">
+                    <label for="catatan">Catatan Pesanan <span>(opsional)</span></label>
+                    <textarea id="catatan" name="catatan" rows="4" placeholder="Contoh: tidak pedas, sambal dipisah, dan sebagainya."></textarea>
+                </div>
+
+                <div class="form-actions">
+                    <p>
+                        <strong>Periksa kembali</strong><br>
+                        nama, metode pesanan, menu, dan jumlah.
+                    </p>
+                    <button class="button button-primary submit-button" type="submit">
+                        Kirim Pesanan <span>→</span>
+                    </button>
+                </div>
+            </form>
+
+            <div id="hasilTransaksi" class="transaction-result" aria-live="polite"></div>
+
+            <div class="history-section" id="riwayat-pesanan">
+                <div class="history-heading">
+                    <div>
+                        <p class="eyebrow">RIWAYAT PESANAN</p>
+                        <h3>Pesanan yang sudah masuk.</h3>
+                    </div>
+                    <p class="history-note">
+                        Setiap pesanan yang berhasil dikirim akan otomatis tercatat di tabel.
+                    </p>
+                </div>
+
+                <div class="history-table-wrap">
+                    <table class="history-table">
+                        <thead>
+                            <tr>
+                                <th>ID Transaksi</th>
+                                <th>Waktu</th>
+                                <th>Pelanggan</th>
+                                <th>Menu</th>
+                                <th>Jumlah</th>
+                                <th>Subtotal</th>
+                                <th>Diskon</th>
+                                <th>Pajak</th>
+                                <th>Total</th>
+                                <th>Metode</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tabelRiwayat"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="footer-main content-wrap">
+        <div class="footer-brand">
+            <div class="brand">
+                <span class="brand-mark">WS</span>
+                <span class="brand-copy">
+                    <strong>Warung Sederhana</strong>
+                    <small>Masakan rumahan, rasa istimewa</small>
+                </span>
+            </div>
+            <p>
+                Tempat sederhana untuk menikmati rasa yang familiar dan membuat kenyang dengan nyaman.
+            </p>
+        </div>
+
+        <div class="footer-column">
+            <h4>Informasi</h4>
+            <p>
+                Alamat<br>
+                <strong>Jl. Anggrek No. 10, Batam</strong>
+            </p>
+            <p>
+                Jam Operasional<br>
+                <strong>Setiap hari · 08.00–21.00</strong>
+            </p>
+        </div>
+
+        <div class="footer-column">
+            <h4>Navigasi</h4>
+            <a href="#beranda">Beranda</a>
+            <a href="#tentang">Tentang Kami</a>
+            <a href="#daftar-menu">Daftar Menu</a>
+            <a href="#form-pemesanan">Pesan Sekarang</a>
+        </div>
+    </div>
+
+    <div class="footer-bottom content-wrap">
+        <span>© 2026 Warung Sederhana</span>
+        <span>Pesan mudah · Makan nyaman · Rasa berkesan</span>
+    </div>
+</footer>
+
+<script src="script/script.js"></script>
+</body>
+</html>
