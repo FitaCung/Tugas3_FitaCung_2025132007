@@ -9,18 +9,13 @@ const metodePesanan = document.getElementById("metode");
 
 // 2. VARIABLE DAN ARRAY
 
-// Ambil riwayat dari localStorage.
-// Jika belum ada data, gunakan array kosong.
 let riwayatPesanan =
     JSON.parse(localStorage.getItem("riwayatPesanan")) || [];
 
-// Diskon member 5%
 const diskonMember = 0.05;
 
-// Pajak 11%
 const pajak = 0.11;
 
-// Nomor transaksi dilanjutkan dari localStorage
 let nomorTransaksi =
     Number(localStorage.getItem("nomorTransaksi")) || 1;
 
@@ -55,22 +50,7 @@ function namaMetode(metode) {
     }
 }
 
-// 6. FUNCTION KATEGORI PELANGGAN
-
-function namaKategori(kategori) {
-    switch (kategori) {
-        case "member":
-            return "Member";
-
-        case "umum":
-            return "Umum";
-
-        default:
-            return kategori;
-    }
-}
-
-// 7. FUNCTION MEMBUAT ID TRANSAKSI
+// 6. FUNCTION MEMBUAT ID TRANSAKSI
 
 function buatIdTransaksi() {
     const sekarang = new Date();
@@ -113,9 +93,30 @@ function tampilkanError(pesan) {
 
     hasilTransaksi.innerHTML = `
         <div class="transaction-error">
-            ${pesan}
+            <strong>Pesanan belum dapat dikirim.</strong>
+            <span>${pesan}</span>
         </div>
     `;
+
+    hasilTransaksi.style.display = "block";
+    hasilTransaksi.style.marginTop = "20px";
+    hasilTransaksi.style.padding = "16px 18px";
+    hasilTransaksi.style.border = "1px solid rgba(180, 50, 40, .35)";
+    hasilTransaksi.style.borderRadius = "12px";
+    hasilTransaksi.style.background = "#fff4f2";
+    hasilTransaksi.style.color = "#8f2d24";
+    hasilTransaksi.style.fontSize = "0.88rem";
+    hasilTransaksi.style.lineHeight = "1.6";
+
+    const errorBox = hasilTransaksi.querySelector(
+        ".transaction-error"
+    );
+
+    if (errorBox) {
+        errorBox.style.display = "flex";
+        errorBox.style.flexDirection = "column";
+        errorBox.style.gap = "4px";
+    }
 
     hasilTransaksi.scrollIntoView({
         behavior: "smooth",
@@ -126,19 +127,16 @@ function tampilkanError(pesan) {
 // 10. FUNCTION VALIDASI NOMOR TELEPON
 
 function validasiNomorTelepon(nomor) {
-    // Nomor hanya boleh berisi angka
     const polaAngka = /^[0-9]+$/;
 
     if (!polaAngka.test(nomor)) {
         return "Nomor telepon hanya boleh berisi angka.";
     }
 
-    // Nomor Indonesia harus dimulai dengan 08
     if (!nomor.startsWith("08")) {
         return "Nomor telepon harus diawali dengan 08.";
     }
 
-    // Panjang nomor
     if (nomor.length < 10 || nomor.length > 13) {
         return "Nomor telepon harus terdiri dari 10–13 digit.";
     }
@@ -156,57 +154,46 @@ function ambilMenuDipilih() {
     );
 
     semuaCheckbox.forEach(function (checkbox) {
-        // Hanya proses menu yang dicentang
         if (!checkbox.checked) {
             return;
         }
 
-        // Checkbox berada di dalam <tr>
         const baris = checkbox.closest("tr");
 
         if (!baris) {
             return;
         }
 
-        // Ambil nama menu
         const namaElement = baris.querySelector(
             ".order-item-name span"
         );
 
-        // Ambil harga
         const hargaElement = baris.querySelector(".price");
 
-        // Ambil jumlah
         const jumlahElement = baris.querySelector(".qty-input");
 
-        // Jika struktur HTML tidak lengkap
         if (!namaElement || !hargaElement || !jumlahElement) {
             return;
         }
 
         const nama = namaElement.textContent.trim();
 
-        // Ubah harga menjadi angka
         const harga = Number(
             hargaElement.textContent.replace(/[^0-9]/g, "")
         );
 
         const jumlah = Number(jumlahElement.value);
 
-        // Validasi harga
         if (isNaN(harga) || harga <= 0) {
             return;
         }
 
-        // Validasi jumlah
         if (!Number.isInteger(jumlah) || jumlah < 1) {
             return;
         }
 
-        // Hitung subtotal
         const subtotal = hitungSubtotal(harga, jumlah);
 
-        // Object menu
         const menu = {
             nama: nama,
             harga: harga,
@@ -214,7 +201,6 @@ function ambilMenuDipilih() {
             subtotal: subtotal
         };
 
-        // Masukkan ke array
         menuDipilih.push(menu);
     });
 
@@ -230,7 +216,6 @@ function validasiForm(
     meja,
     menuDipilih
 ) {
-    // Validasi nama
     if (nama.trim() === "") {
         return "Nama pelanggan wajib diisi.";
     }
@@ -243,7 +228,6 @@ function validasiForm(
         return "Nama pelanggan harus berupa nama, bukan angka.";
     }
 
-    // Validasi telepon
     if (telepon.trim() === "") {
         return "Nomor telepon wajib diisi.";
     }
@@ -256,24 +240,20 @@ function validasiForm(
         return errorTelepon;
     }
 
-    // Validasi metode
     if (metode === "") {
         return "Silakan pilih metode pesanan.";
     }
 
-    // Validasi nomor meja
     if (metode === "dine-in") {
         if (meja.trim() === "") {
             return "Nomor meja wajib diisi untuk makan di tempat.";
         }
     }
 
-    // Validasi menu
     if (menuDipilih.length === 0) {
         return "Silakan pilih minimal satu menu.";
     }
 
-    // Validasi setiap menu
     for (const menu of menuDipilih) {
         if (isNaN(menu.harga) || menu.harga <= 0) {
             return `Harga ${menu.nama} tidak valid.`;
@@ -308,22 +288,17 @@ function simpanRiwayat() {
 // 14. FUNCTION MEMASUKKAN TRANSAKSI KE TABEL RIWAYAT
 
 function tambahKeTabel(data) {
-    // Satu transaksi = satu baris
     const baris = document.createElement("tr");
 
-    // ID TRANSAKSI
     const kolomId = document.createElement("td");
     kolomId.textContent = data.id;
 
-    // WAKTU
     const kolomWaktu = document.createElement("td");
     kolomWaktu.textContent = formatWaktu(data.waktu);
 
-    // PELANGGAN
     const kolomPelanggan = document.createElement("td");
     kolomPelanggan.textContent = data.nama;
 
-    // MENU
     const kolomMenu = document.createElement("td");
     let daftarMenu = "";
 
@@ -338,7 +313,6 @@ function tambahKeTabel(data) {
 
     kolomMenu.innerHTML = daftarMenu;
 
-    // TOTAL JUMLAH ITEM
     const kolomJumlah = document.createElement("td");
     let totalJumlahItem = 0;
 
@@ -348,27 +322,21 @@ function tambahKeTabel(data) {
 
     kolomJumlah.textContent = totalJumlahItem;
 
-    // SUBTOTAL
     const kolomSubtotal = document.createElement("td");
     kolomSubtotal.textContent = formatRupiah(data.subtotal);
 
-    // DISKON
     const kolomDiskon = document.createElement("td");
     kolomDiskon.textContent = formatRupiah(data.diskon);
 
-    // PAJAK
     const kolomPajak = document.createElement("td");
     kolomPajak.textContent = formatRupiah(data.nilaiPajak);
 
-    // TOTAL
     const kolomTotal = document.createElement("td");
     kolomTotal.textContent = formatRupiah(data.total);
 
-    // METODE
     const kolomMetode = document.createElement("td");
     kolomMetode.textContent = namaMetode(data.metode);
 
-    // MASUKKAN SEMUA KOLOM
     baris.appendChild(kolomId);
     baris.appendChild(kolomWaktu);
     baris.appendChild(kolomPelanggan);
@@ -380,7 +348,6 @@ function tambahKeTabel(data) {
     baris.appendChild(kolomTotal);
     baris.appendChild(kolomMetode);
 
-    // Masukkan transaksi ke tabel
     tabelRiwayat.appendChild(baris);
 }
 
@@ -388,7 +355,6 @@ function tambahKeTabel(data) {
 
 function muatRiwayat() {
     riwayatPesanan.forEach(function (transaksi) {
-        // JSON menyimpan Date sebagai teks
         transaksi.waktu = new Date(transaksi.waktu);
 
         tambahKeTabel(transaksi);
@@ -434,10 +400,8 @@ function perbaruiJam() {
         });
 }
 
-// Jalankan pertama kali
 perbaruiJam();
 
-// Update setiap satu detik
 setInterval(perbaruiJam, 1000);
 
 // 18. EVENT METODE PESANAN
@@ -463,23 +427,19 @@ semuaInputJumlah.forEach(function (input) {
         function () {
             let jumlah = Number(input.value);
 
-            // Jika kosong
             if (input.value === "") {
                 return;
             }
 
-            // Jika bukan angka
             if (isNaN(jumlah)) {
                 input.value = 1;
                 return;
             }
 
-            // Jika desimal
             if (!Number.isInteger(jumlah)) {
                 input.value = Math.floor(jumlah);
             }
 
-            // Jumlah minimal 1
             if (Number(input.value) < 1) {
                 input.value = 1;
             }
@@ -515,7 +475,6 @@ semuaCheckboxMenu.forEach(function (checkbox) {
                 return;
             }
 
-            // Saat menu dipilih, jumlah minimal menjadi 1
             if (
                 inputJumlah.value === "" ||
                 Number(inputJumlah.value) < 1
@@ -532,10 +491,8 @@ if (formPesanan) {
     formPesanan.addEventListener(
         "submit",
         function (event) {
-            // Mencegah halaman refresh
             event.preventDefault();
 
-            // Ambil data pelanggan
             const nama = document.getElementById(
                 "nama"
             ).value.trim();
@@ -568,10 +525,8 @@ if (formPesanan) {
                 ? kategoriPelanggan.value
                 : "umum";
 
-            // Ambil menu yang dipilih
             const menuDipilih = ambilMenuDipilih();
 
-            // Validasi
             const pesanError = validasiForm(
                 nama,
                 telepon,
@@ -585,39 +540,30 @@ if (formPesanan) {
                 return;
             }
 
-            // Hapus pesan error sebelumnya
             if (hasilTransaksi) {
                 hasilTransaksi.innerHTML = "";
             }
 
-            // Hitung subtotal
             let subtotal = 0;
 
             menuDipilih.forEach(function (menu) {
                 subtotal += menu.subtotal;
             });
 
-            // Hitung diskon
             let diskon = 0;
 
-            // Member mendapat diskon 5%
             if (kategori === "member") {
                 diskon = subtotal * diskonMember;
-            }
-
-            // Umum mendapat diskon jika subtotal minimal Rp100.000
-            else if (subtotal >= 100000) {
+            } else if (subtotal >= 100000) {
                 diskon = subtotal * diskonMember;
             }
 
-            // Hitung pajak
             const setelahDiskon = subtotal - diskon;
 
             const nilaiPajak = setelahDiskon * pajak;
 
             const total = setelahDiskon + nilaiPajak;
 
-            // Buat object transaksi
             const sekarang = new Date();
 
             const transaksi = {
@@ -636,32 +582,22 @@ if (formPesanan) {
                 total: total
             };
 
-            // Simpan transaksi ke array
             riwayatPesanan.push(transaksi);
 
-            // Simpan ke localStorage
-            simpanRiwayat();
-
-            // Masukkan langsung ke tabel
             tambahKeTabel(transaksi);
 
-            // Nomor transaksi berikutnya
             nomorTransaksi++;
 
             simpanRiwayat();
 
-            // Reset form
             formPesanan.reset();
 
-            // Setelah reset, semua jumlah dikembalikan menjadi 1
             semuaInputJumlah.forEach(function (input) {
                 input.value = 1;
             });
 
-            // Atur kembali nomor meja
             aturNomorMeja();
 
-            // Scroll langsung ke tabel riwayat
             if (tabelRiwayat) {
                 tabelRiwayat.scrollIntoView({
                     behavior: "smooth",
@@ -671,7 +607,5 @@ if (formPesanan) {
         }
     );
 }
-
-// 22. MUAT RIWAYAT SAAT WEB DIBUKA / REFRESH
 
 muatRiwayat();
